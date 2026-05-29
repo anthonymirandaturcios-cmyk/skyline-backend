@@ -1,3 +1,3 @@
 window.SKYLINE_CONFIG = {
-  API: "https://montreal-material-tucson-commands.trycloudflare.com"
+  API: "https://skyline-gecu.onrender.com/"
 };
