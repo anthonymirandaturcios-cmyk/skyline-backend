@@ -1,0 +1,213 @@
+:root {
+  --bg: #0b0014;
+  --panel: #1a002b;
+  --primary: #6a00ff;
+  --secondary: #a855f7;
+  --text: #ffffff;
+  --muted: #b8b8b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ======================
+   SCREENS
+====================== */
+.screen {
+  display: none;
+  height: 100vh;
+  width: 100%;
+}
+
+.active {
+  display: block;
+}
+
+/* ======================
+   LOGIN / REGISTER
+====================== */
+.card {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 42px;
+  color: var(--secondary);
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+input {
+  width: 85%;
+  max-width: 340px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: var(--panel);
+  color: var(--text);
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+button {
+  width: 85%;
+  max-width: 340px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.03);
+  background: #7b2cff;
+}
+
+/* ======================
+   TOPBAR
+====================== */
+.topbar {
+  height: 60px;
+  background: var(--panel);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.topbar h3 {
+  font-size: 18px;
+}
+
+/* ======================
+   USERS LIST (HOME)
+====================== */
+#usersList {
+  padding: 10px;
+  overflow-y: auto;
+  height: calc(100vh - 60px);
+}
+
+.chat {
+  background: var(--panel);
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.chat:hover {
+  background: #25003f;
+}
+
+/* online dot */
+.online {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00ff88;
+  box-shadow: 0 0 8px #00ff88;
+}
+
+/* ======================
+   CHAT SCREEN
+====================== */
+.chatScreen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#chatBox {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* messages */
+.msg {
+  padding: 10px 12px;
+  border-radius: 12px;
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
+.me {
+  background: var(--primary);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.them {
+  background: var(--panel);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+/* ======================
+   INPUT CHAT
+====================== */
+.chatInput {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: var(--panel);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.chatInput input {
+  flex: 1;
+  max-width: none;
+  margin: 0;
+}
+
+.chatInput button {
+  width: 90px;
+  max-width: none;
+}
+
+/* ======================
+   SCROLLBAR (OPCIONAL PRO)
+====================== */
+#chatBox::-webkit-scrollbar,
+#usersList::-webkit-scrollbar {
+  width: 6px;
+}
+
+#chatBox::-webkit-scrollbar-thumb,
+#usersList::-webkit-scrollbar-thumb {
+  background: #3a0066;
+  border-radius: 10px;
+}

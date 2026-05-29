@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skyline</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="loginScreen" class="screen active">
+  <div class="card">
+    <h1 class="logo">Skyline</h1>
+
+    <input id="loginEmail" placeholder="Correo">
+    <input id="loginPassword" type="password" placeholder="Contraseña">
+
+    <button onclick="login()">Iniciar sesión</button>
+
+    <p class="link" onclick="showRegister()">¿No tienes cuenta? Regístrate</p>
+  </div>
+</div>
+
+<!-- REGISTER -->
+<div id="registerScreen" class="screen">
+  <div class="card">
+    <h1 class="logo">Registro</h1>
+
+    <input id="regName" placeholder="Nombre">
+    <input id="regEmail" placeholder="Correo">
+    <input id="regPassword" type="password" placeholder="Contraseña">
+    <input id="regConfirm" type="password" placeholder="Confirmar contraseña">
+
+    <button onclick="register()">Crear cuenta</button>
+
+    <p class="link" onclick="showLogin()">¿Ya tienes cuenta? Inicia sesión</p>
+  </div>
+</div>
+
+<!-- OTP -->
+<div id="otpScreen" class="screen">
+  <div class="card">
+    <h1 class="logo">Verificar cuenta</h1>
+
+    <input id="otpEmail" placeholder="Correo">
+    <input id="otpCode" placeholder="Código OTP">
+
+    <button onclick="verifyOTP()">Verificar</button>
+
+    <p class="link" onclick="showLogin()">Volver a login</p>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="homeScreen" class="screen">
+
+  <header class="topbar">
+    <h3>Skyline</h3>
+    <span id="userInfo"></span>
+  </header>
+
+  <div id="usersList"></div>
+
+</div>
+
+<!-- CHAT -->
+<div id="chatScreen" class="screen chatScreen">
+
+  <header class="topbar">
+    <span onclick="backHome()" style="cursor:pointer;">⬅</span>
+    <h3 id="chatUser"></h3>
+    <span></span>
+  </header>
+
+  <div id="chatBox" class="chatBox"></div>
+
+  <div class="chatInput">
+    <input id="msgInput" placeholder="Escribe un mensaje">
+    <button onclick="sendMsg()">Enviar</button>
+  </div>
+
+</div>
+
+<!-- 🔥 IMPORTANTE: CONFIG PRIMERO -->
+<script src="config.js"></script>
+
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
